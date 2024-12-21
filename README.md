@@ -39,12 +39,12 @@ A modern, interactive web application to celebrate the New Year with a stunning 
 
 1. Clone the repository:
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/alidiamond1/Happy-New-Year.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd new-year-celebration
+   cd Happy-New-Year
    ```
 
 3. Start a local server:
