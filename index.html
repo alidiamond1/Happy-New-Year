@@ -4,75 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy New Year 2024!</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-        <main class="container">
-            <div class="content">
-                <div class="firework"></div>
-                <div class="firework"></div>
-                <div class="firework"></div>
-                
-                <div class="header-content">
-                    <h1 class="message">Happy New Year</h1>
-                    <div class="year-container">
-                        <span class="year-digit">2</span>
-                        <span class="year-digit">0</span>
-                        <span class="year-digit">2</span>
-                        <span class="year-digit">4</span>
-                    </div>
-                </div>
-
-                <div class="wishes-container">
-                    <p class="wishes">May your dreams take flight and your spirit shine bright! 🌟</p>
-                    <div class="resolution-box">
-                        <h3><i class="fas fa-star"></i> New Year Resolutions <i class="fas fa-star"></i></h3>
-                        <ul class="resolution-list">
-                            <li><i class="fas fa-check-circle"></i> Dream Big</li>
-                            <li><i class="fas fa-check-circle"></i> Stay Positive</li>
-                            <li><i class="fas fa-check-circle"></i> Spread Joy</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="countdown-container">
-                    <h2 class="countdown-title">Countdown to 2025</h2>
-                    <div class="countdown">
-                        <div class="time-block">
-                            <span id="days">00</span>
-                            <span class="label">Days</span>
-                        </div>
-                        <div class="time-block">
-                            <span id="hours">00</span>
-                            <span class="label">Hours</span>
-                        </div>
-                        <div class="time-block">
-                            <span id="minutes">00</span>
-                            <span class="label">Minutes</span>
-                        </div>
-                        <div class="time-block">
-                            <span id="seconds">00</span>
-                            <span class="label">Seconds</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="celebration-icons">
-                    <i class="fas fa-glass-cheers"></i>
-                    <i class="fas fa-gift"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-heart"></i>
-                    <i class="fas fa-moon"></i>
-                </div>
-            </div>
-        </main>
-        <canvas id="confettiCanvas"></canvas>
+    <!-- Simple Audio Controls -->
+    <div class="audio-controls">
+        <button id="toggleMusic" class="control-btn">
+            <i class="fas fa-music"></i>
+        </button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Social Media Links -->
+    <div class="social-buttons">
+        <a href="https://github.com/alidiamond1" target="_blank" class="social-btn" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://x.com/Alidiamond143" target="_blank" class="social-btn" title="Twitter">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ali-diamond-19b8052b9/" target="_blank" class="social-btn" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.facebook.com/AliNorAbdulle10" target="_blank" class="social-btn" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <h1 class="message">Happy New Year</h1>
+    <div class="year-container">
+        <span class="year-digit">2</span>
+        <span class="year-digit">0</span>
+        <span class="year-digit">2</span>
+        <span class="year-digit">4</span>
+    </div>
+    <p class="wishes">May your dreams take flight and your spirit shine bright! ✨</p>
+
+    <!-- Enhanced Countdown Section -->
+    <div class="countdown-section">
+        <h2 class="countdown-title">
+            <span class="countdown-icon">⌛</span>
+            Countdown to 2025
+            <span class="countdown-icon">⌛</span>
+        </h2>
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Days</div>
+                <div class="countdown-glow"></div>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+                <div class="countdown-glow"></div>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+                <div class="countdown-glow"></div>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+                <div class="countdown-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resolution Box -->
+    <div class="resolution-box">
+        <h2>⭐ New Year Resolutions / Goals ⭐</h2>
+        <div class="add-resolution">
+            <input type="text" id="newResolution" placeholder="Add your resolution...">
+            <button id="addResolution">+</button>
+        </div>
+        <ul class="resolution-list" id="resolutionList">
+            <li><i class="fas fa-check-circle"></i> Dream Big</li>
+            <li><i class="fas fa-check-circle"></i> Stay Positive</li>
+            <li><i class="fas fa-check-circle"></i> Spread Joy</li>
+        </ul>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.chosic.com/wp-content/uploads/2020/05/Whimsical-Popsicle.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="./script.js"></script>
 </body>
 </html>
